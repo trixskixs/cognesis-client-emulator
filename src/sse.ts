@@ -34,6 +34,13 @@ function writeEvent(client: ManagedClient, event: string, data: unknown): void {
   client.res.write(`data: ${JSON.stringify(data)}\n\n`);
 }
 
+function writeMessage(client: ManagedClient, data: unknown): void {
+  if (client.closed) {
+    return;
+  }
+  client.res.write(`data: ${JSON.stringify(data)}\n\n`);
+}
+
 function writeRetry(client: ManagedClient, retryMs: number): void {
   client.res.write(`retry: ${retryMs}\n\n`);
 }
@@ -131,23 +138,43 @@ export class SseHub {
       writeEvent(client, "miss", { kind: "clip", request_id: entry.requestId });
     }
 
-    writeEvent(client, "turn_started", { request_id: entry.requestId });
-    // Clear any previously shown idle
-    writeEvent(client, "stage.stop_idle", { reason: "new_turn" });
+    writeMessage(client, { stage: { type: "stage.stop_idle", payload: { reason: "new_turn" } } });
 
     const audioTimer = setTimeout(() => {
       latencyHistogram.observe({ phase: "audio" }, entry.latencyMs.audio);
-      writeEvent(client, "timeline", entry.timeline);
+      // Map emulator timeline to client envelope
+      const t = entry.timeline as any;
+      const tracks = (t.tracks ?? []).map((track: any) => {
+        const url = track?.source?.url ?? track?.url ?? "";
+        const kind = track?.type === "audio" ? "audio" : track?.type === "video" ? "video" : (track?.type ?? "unknown");
+        const mime_type = kind === "audio"
+          ? "audio/wav"
+          : kind === "video"
+          ? "video/mp4"
+          : kind === "captions" ? "text/vtt" : "application/octet-stream";
+        return { kind, url, mime_type };
+      });
+      const swap_points = (t.swap_points ?? []).map((sp: any) => ({ t_ms: Math.round(((sp?.at ?? 0) as number) * 1000) }));
+      writeMessage(client, {
+        timeline: {
+          turn_id: entry.requestId,
+          session_id: client.sessionId,
+          swap_points,
+          tracks,
+          sidecar: t.sidecar ?? null,
+          sources_badge: Boolean(t.sources_badge),
+          citations_ref: t.citations_ref ?? null,
+          share_ref: t.share_ref ?? null,
+        }
+      });
     }, entry.latencyMs.audio);
     client.timers.push(audioTimer);
 
     if (entry.timeline.swap_points && entry.timeline.swap_points.length > 0) {
       const swapTimer = setTimeout(() => {
         latencyHistogram.observe({ phase: "clip" }, entry.latencyMs.clip);
-        writeEvent(client, "swap", {
-          request_id: entry.requestId,
-          swap_points: entry.timeline.swap_points,
-        });
+        // Optional swap notification as a stage hint
+        writeMessage(client, { stage_hints: { swap_points: entry.timeline.swap_points } });
       }, entry.latencyMs.clip);
       client.timers.push(swapTimer);
     }
@@ -155,7 +182,7 @@ export class SseHub {
     const stageIdle = (entry.timeline.meta as { stage_idle_after_ms?: unknown } | undefined)?.stage_idle_after_ms;
     const idleAfterMs = typeof stageIdle === "number" ? stageIdle : computeTimelineDuration(entry);
     const idleTimer = setTimeout(() => {
-      writeEvent(client, "stage.play_idle", { after_ms: idleAfterMs });
+      writeMessage(client, { stage: { type: "stage.play_idle", payload: { after_ms: idleAfterMs } } });
     }, entry.latencyMs.audio + idleAfterMs);
     client.timers.push(idleTimer);
   }
