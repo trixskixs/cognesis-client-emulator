@@ -145,7 +145,12 @@ export class SseHub {
       // Map emulator timeline to client envelope
       const t = entry.timeline as any;
       const tracks = (t.tracks ?? []).map((track: any) => {
-        const url = track?.source?.url ?? track?.url ?? "";
+        const raw = track?.source?.url ?? track?.url ?? "";
+        let url = raw;
+        if (typeof raw === "string" && !/^https?:\/\//i.test(raw)) {
+          // Strip leading '/media/' so client resolver doesn't duplicate the segment
+          url = raw.startsWith("/media/") ? raw.slice(7) : (raw.startsWith("/") ? raw.slice(1) : raw);
+        }
         const kind = track?.type === "audio" ? "audio" : track?.type === "video" ? "video" : (track?.type ?? "unknown");
         const mime_type = kind === "audio"
           ? "audio/wav"
@@ -182,7 +187,9 @@ export class SseHub {
     const stageIdle = (entry.timeline.meta as { stage_idle_after_ms?: unknown } | undefined)?.stage_idle_after_ms;
     const idleAfterMs = typeof stageIdle === "number" ? stageIdle : computeTimelineDuration(entry);
     const idleTimer = setTimeout(() => {
-      writeMessage(client, { stage: { type: "stage.play_idle", payload: { after_ms: idleAfterMs } } });
+      // Offer a persona-local stage media path the client can resolve
+      const personaStage = `figures/${entry.personaId}/stage.mp4`;
+      writeMessage(client, { stage: { type: "stage.play_idle", payload: { after_ms: idleAfterMs, media_url: personaStage } } });
     }, entry.latencyMs.audio + idleAfterMs);
     client.timers.push(idleTimer);
   }
