@@ -214,19 +214,35 @@ export function createApp(dependencies: AppDependencies): express.Express {
   });
 
   app.post("/v1/session/turn", async (req, res) => {
-    const idempotencyKey = req.get("idempotency-key");
-    if (!idempotencyKey) {
-      sendError(res, 400, "EMU_BAD_REQUEST", "Idempotency-Key header is required");
-      return;
+    const idempotencyKey = (req.get("idempotency-key") || randomUUID()).toString();
+
+    const contentType = (req.get("content-type") || "").toLowerCase();
+    let payload: TurnRequestBody | null = null;
+
+    if (contentType.startsWith("audio/")) {
+      // Binary upload: derive from session
+      const derivedSessionId = extractSessionId(req, {});
+      if (!derivedSessionId) {
+        sendError(res, 400, "EMU_BAD_REQUEST", "session_id required in query/header/auth for audio uploads");
+        return;
+      }
+      const session = sessionStore.getSession(derivedSessionId);
+      if (!session) {
+        sendError(res, 404, "EMU_SESSION_UNKNOWN", "Session not found or expired");
+        return;
+      }
+      const personaId = session.personas[0]?.id || "socrates";
+      payload = { persona_id: personaId, transcript: { text: "ptt" }, session_id: derivedSessionId } as TurnRequestBody;
+    } else {
+      const parseResult = turnSchema.safeParse(req.body);
+      if (!parseResult.success) {
+        sendError(res, 400, "EMU_BAD_REQUEST", parseResult.error.message);
+        return;
+      }
+      payload = parseResult.data as TurnRequestBody;
     }
 
-    const parseResult = turnSchema.safeParse(req.body);
-    if (!parseResult.success) {
-      sendError(res, 400, "EMU_BAD_REQUEST", parseResult.error.message);
-      return;
-    }
-    const payload = parseResult.data as TurnRequestBody;
-    const sessionId = `sess_${randomUUID()}`;
+    const sessionId = extractSessionId(req, payload!);
     if (!sessionId) {
       sendError(res, 400, "EMU_BAD_REQUEST", "session_id is required");
       return;
@@ -238,11 +254,11 @@ export function createApp(dependencies: AppDependencies): express.Express {
       return;
     }
 
-    const discriminator = payload.transcript?.text ?? payload.audio_url ?? payload.transcript_hint ?? payload.persona_id;
+    const discriminator = payload!.transcript?.text ?? payload!.audio_url ?? payload!.transcript_hint ?? payload!.persona_id;
 
     let fixture: LoadedFixture;
     try {
-      fixture = fixtureRegistry.selectFixture(payload.persona_id, discriminator);
+      fixture = fixtureRegistry.selectFixture(payload!.persona_id, discriminator);
     } catch (error) {
       sendError(res, 503, "EMU_FIXTURE_MISSING", (error as Error).message);
       return;
@@ -259,7 +275,7 @@ export function createApp(dependencies: AppDependencies): express.Express {
       requestId,
       fixtureId: fixture.id,
       timeline,
-      personaId: payload.persona_id,
+      personaId: payload!.persona_id,
       miss,
       latencyMs: {
         audio: withJitter(config.latency.tts, config.latency.jitter),
