@@ -1,0 +1,80 @@
+{
+  "version": "1",
+  "clock": "audio",
+  "start_at": "now",
+  "sources_badge": true,
+  "tracks": [
+    {
+      "type": "audio",
+      "id": "a2",
+      "source": {
+        "kind": "pair_wav_montage",
+        "url": "/media/tts/tts_socrates_virtue.wav"
+      },
+      "offset": 0,
+      "duration": 5.8
+    },
+    {
+      "type": "video",
+      "id": "v2",
+      "source": {
+        "kind": "hero",
+        "url": "/media/clips/clip_socrates_virtue.mp4"
+      },
+      "offset": 0,
+      "duration": 5.8
+    },
+    {
+      "type": "captions",
+      "id": "c2",
+      "source": {
+        "kind": "vtt",
+        "url": "/media/tts/tts_socrates_virtue.vtt"
+      }
+    }
+  ],
+  "swap_points": [
+    {
+      "at": 2.4,
+      "replace": "v2",
+      "with": {
+        "kind": "scenic",
+        "cdn_url": "/media/scenes/athens_pan.mp4",
+        "role": "broll",
+        "mode": "full"
+      }
+    }
+  ],
+  "sidecar": {
+    "sentences": [
+      {
+        "idx": 0,
+        "band": "S2",
+        "t0_ms": 0,
+        "t1_ms": 2400,
+        "text": "Virtue is a kind of knowledge.[^1]",
+        "span_ids": ["span_socrates_virtue_001"]
+      },
+      {
+        "idx": 1,
+        "band": "S1",
+        "t0_ms": 2400,
+        "t1_ms": 5800,
+        "text": "Let us test that claim together."
+      }
+    ],
+    "citation_map": {
+      "[^1]": "span_socrates_virtue_001"
+    },
+    "pair_policy": {
+      "mode": "L1",
+      "dual_start": false,
+      "selected_pair_id": "grp_virtue_v1"
+    }
+  },
+  "share_ref": {
+    "id": "share_socrates_sources",
+    "ttl_s": 900,
+    "poster": "/media/share/socrates_poster.jpg"
+  }
+}

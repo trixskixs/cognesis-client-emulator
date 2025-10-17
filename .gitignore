@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+.pnp/
+.pnp.cjs
+
+# Builds / Artifacts
+dist/
+build/
+.turbo/
+.parcel-cache/
+.cache/
+
+# Env & local
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+.eslintcache
+*.tsbuildinfo
+.idea/
+.vscode/
+
+# Test/coverage
+coverage/

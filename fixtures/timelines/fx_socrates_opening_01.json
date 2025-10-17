@@ -1,0 +1,72 @@
+{
+  "version": "1",
+  "clock": "audio",
+  "start_at": "now",
+  "tracks": [
+    {
+      "type": "audio",
+      "id": "a1",
+      "source": {
+        "kind": "pair_wav_montage",
+        "url": "/media/tts/tts_socrates_hello.wav"
+      },
+      "offset": 0,
+      "duration": 4.5,
+      "marks": {
+        "words": [
+          { "t": 0.12, "w": "What" },
+          { "t": 0.32, "w": "brings" },
+          { "t": 0.58, "w": "you" },
+          { "t": 0.88, "w": "here" },
+          { "t": 1.25, "w": "friend?" }
+        ]
+      }
+    },
+    {
+      "type": "video",
+      "id": "v1",
+      "source": {
+        "kind": "hero",
+        "url": "/media/clips/clip_socrates_hello.mp4"
+      },
+      "offset": 0,
+      "duration": 4.5
+    },
+    {
+      "type": "captions",
+      "id": "c1",
+      "source": {
+        "kind": "vtt",
+        "url": "/media/tts/tts_socrates_hello.vtt"
+      }
+    }
+  ],
+  "sidecar": {
+    "sentences": [
+      {
+        "idx": 0,
+        "band": "S1",
+        "t0_ms": 0,
+        "t1_ms": 2100,
+        "text": "What brings you here, friend?"
+      },
+      {
+        "idx": 1,
+        "band": "S1",
+        "t0_ms": 2100,
+        "t1_ms": 4500,
+        "text": "Shall we walk together and reason?"
+      }
+    ],
+    "pair_policy": {
+      "mode": "L0",
+      "dual_start": false,
+      "selected_pair_id": "grp_greeting_v1"
+    }
+  },
+  "share_ref": {
+    "id": "share_socrates_intro",
+    "ttl_s": 600,
+    "poster": "/media/share/socrates_poster.jpg"
+  }
+}

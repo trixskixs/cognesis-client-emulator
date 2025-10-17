@@ -1,0 +1,1289 @@
+{
+  "fixtures": [
+    {
+      "id": "fx_socrates_opening_01",
+      "persona_id": "socrates",
+      "title": "Socratic Greeting",
+      "timeline_path": "timelines/fx_socrates_opening_01.json",
+      "swap_enabled": true,
+      "share_enabled": true,
+      "idle_after_ms": 3200
+    },
+    {
+      "id": "fx_socrates_s2_virtue",
+      "persona_id": "socrates",
+      "title": "Virtue and Knowledge",
+      "timeline_path": "timelines/fx_socrates_s2_virtue.json",
+      "swap_enabled": true,
+      "share_enabled": true,
+      "sources_badge": true,
+      "idle_after_ms": 3600
+    },
+    {
+      "id": "fx_socrates_swap_cutaway",
+      "persona_id": "socrates",
+      "title": "Agora Cutaway",
+      "timeline_path": "timelines/fx_socrates_swap_cutaway.json",
+      "swap_enabled": true,
+      "share_enabled": false,
+      "idle_after_ms": 4000
+    }
+  ],
+  "homefeed": {
+    "schema": "homefeed_row_contract_v1.0.0",
+    "rows": [
+      {
+        "row_id": "gallery_featured",
+        "category": "Featured",
+        "figure_cards": [
+          {
+            "figure_id": "socrates",
+            "display_name": "Socrates",
+            "category": "Philosophy",
+            "summary": "Classical Greek philosopher (c. 470–399 BCE).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            }
+          }
+        ],
+        "description": "New and notable figures from across history and culture."
+      },
+      {
+        "row_id": "us_presidents",
+        "category": "American Presidents",
+        "figure_cards": [
+          {
+            "figure_id": "washington",
+            "display_name": "George Washington",
+            "category": "American Presidents",
+            "summary": "1st U.S. president (1732–1799).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/washington_poster.jpg"
+            },
+            "about": "Commander-in-chief of the Continental Army; first President of the United States."
+          },
+          {
+            "figure_id": "jefferson",
+            "display_name": "Thomas Jefferson",
+            "category": "American Presidents",
+            "summary": "3rd U.S. president (1743–1826).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/jefferson_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "lincoln",
+            "display_name": "Abraham Lincoln",
+            "category": "American Presidents",
+            "summary": "16th U.S. president (1809–1865).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/lincoln_poster.jpg"
+            },
+            "about": "US president who preserved the Union and abolished slavery."
+          },
+          {
+            "figure_id": "t_roosevelt",
+            "display_name": "Theodore Roosevelt",
+            "category": "American Presidents",
+            "summary": "26th U.S. president (1858–1919).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/t_roosevelt_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "fdr",
+            "display_name": "Franklin D. Roosevelt",
+            "category": "American Presidents",
+            "summary": "32nd U.S. president (1882–1945).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/fdr_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "kennedy",
+            "display_name": "John F. Kennedy",
+            "category": "American Presidents",
+            "summary": "35th U.S. president (1917–1963).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/kennedy_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "adams",
+            "display_name": "John Adams",
+            "category": "American Presidents",
+            "summary": "2nd U.S. president (1735–1826).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/washington_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "madison",
+            "display_name": "James Madison",
+            "category": "American Presidents",
+            "summary": "4th U.S. president (1751–1836).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/washington_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "monroe",
+            "display_name": "James Monroe",
+            "category": "American Presidents",
+            "summary": "5th U.S. president (1758–1831).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/washington_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "reagan",
+            "display_name": "Ronald Reagan",
+            "category": "American Presidents",
+            "summary": "40th U.S. president (1911–2004).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/washington_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "obama",
+            "display_name": "Barack Obama",
+            "category": "American Presidents",
+            "summary": "44th U.S. president (b. 1961).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/washington_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "polk",
+            "display_name": "James K. Polk",
+            "category": "American Presidents",
+            "summary": "11th U.S. president (1795–1849).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/washington_poster.jpg"
+            }
+          }
+        ],
+        "description": "United States Presidents, 1789—present. Leaders who shaped the American project."
+      },
+      {
+        "row_id": "uk_monarchs",
+        "category": "English Kings & Queens",
+        "figure_cards": [
+          {
+            "figure_id": "henry_viii",
+            "display_name": "Henry VIII",
+            "category": "English Royals",
+            "summary": "King of England (1491–1547); English Reformation.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/henry_viii_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "elizabeth_i",
+            "display_name": "Queen Elizabeth I",
+            "category": "English Royals",
+            "summary": "Queen of England (1533–1603); Elizabethan era.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/elizabeth_i_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "victoria",
+            "display_name": "Queen Victoria",
+            "category": "English Royals",
+            "summary": "Queen of the UK (1819–1901); Victorian age.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/victoria_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "elizabeth_ii",
+            "display_name": "Queen Elizabeth II",
+            "category": "English Royals",
+            "summary": "Queen of the UK (1926–2022); longest-reigning.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/elizabeth_ii_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "charles_iii",
+            "display_name": "King Charles III",
+            "category": "English Royals",
+            "summary": "King of the UK (b. 1948).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/charles_iii_poster.jpg"
+            }
+          }
+        ],
+        "description": "Monarchs of England and the United Kingdom, from the Tudors to today."
+      },
+      {
+        "row_id": "scientists_inventors",
+        "category": "Scientists & Inventors",
+        "figure_cards": [
+          {
+            "figure_id": "curie",
+            "display_name": "Marie Curie",
+            "category": "Scientists",
+            "summary": "Pioneering physicist/chemist (1867–1934); two Nobel Prizes.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/curie_poster.jpg"
+            },
+            "about": "Pioneering physicist and chemist; discovered polonium and radium; first woman to win a Nobel Prize."
+          },
+          {
+            "figure_id": "einstein",
+            "display_name": "Albert Einstein",
+            "category": "Scientists",
+            "summary": "Theoretical physicist (1879–1955); relativity.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/einstein_poster.jpg"
+            },
+            "about": "Developed the theory of relativity and reshaped modern physics."
+          },
+          {
+            "figure_id": "tesla",
+            "display_name": "Nikola Tesla",
+            "category": "Inventors",
+            "summary": "Inventor/electrical engineer (1856–1943); AC power.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/tesla_poster.jpg"
+            },
+            "about": "Inventor and electrical engineer; advanced AC power systems and wireless concepts."
+          },
+          {
+            "figure_id": "newton",
+            "display_name": "Isaac Newton",
+            "category": "Scientists",
+            "summary": "Mathematician/physicist (1643–1727); laws of motion.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/newton_poster.jpg"
+            },
+            "about": "Formulated the laws of motion and universal gravitation; co-invented calculus."
+          }
+        ],
+        "description": "Pioneers who transformed how we live—breakthrough science and bold invention."
+      },
+      {
+        "row_id": "philosophers",
+        "category": "Philosophers",
+        "figure_cards": [
+          {
+            "figure_id": "socrates",
+            "display_name": "Socrates",
+            "category": "Philosophy",
+            "summary": "Classical Greek philosopher (c. 470–399 BCE).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "plato",
+            "display_name": "Plato",
+            "category": "Philosophy",
+            "summary": "Classical Greek philosopher (c. 428–348 BCE).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/plato_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "aristotle",
+            "display_name": "Aristotle",
+            "category": "Philosophy",
+            "summary": "Classical Greek philosopher (384–322 BCE).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/aristotle_poster.jpg"
+            }
+          }
+        ],
+        "description": "Thinkers whose ideas still challenge and guide us today."
+      },
+      {
+        "row_id": "fictional",
+        "category": "Fictional Figures",
+        "figure_cards": [
+          {
+            "figure_id": "sherlock_holmes",
+            "display_name": "Sherlock Holmes",
+            "category": "Fictional",
+            "summary": "Public-domain detective by Arthur Conan Doyle.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            },
+            "about": "Observant detective of 221B Baker Street; applies deduction to unravel mysteries."
+          },
+          {
+            "figure_id": "robin_hood",
+            "display_name": "Robin Hood",
+            "category": "Fictional",
+            "summary": "English folk hero; takes from the rich, gives to the poor.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            },
+            "about": "Legendary archer who steals from the rich to aid the poor in Sherwood Forest."
+          },
+          {
+            "figure_id": "king_arthur",
+            "display_name": "King Arthur",
+            "category": "Fictional",
+            "summary": "Legendary British leader of Camelot.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            },
+            "about": "Legendary king of Camelot; the Round Table symbolizes chivalry and justice."
+          },
+          {
+            "figure_id": "athena",
+            "display_name": "Athena",
+            "category": "Fictional",
+            "summary": "Greek goddess of wisdom and war.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            },
+            "about": "Greek goddess of wisdom, crafts, and strategic warfare."
+          },
+          {
+            "figure_id": "odysseus",
+            "display_name": "Odysseus",
+            "category": "Fictional",
+            "summary": "Hero of Homer's Odyssey.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            },
+            "about": "Cunning hero of Homer�s Odyssey; king of Ithaca."
+          },
+          {
+            "figure_id": "dracula",
+            "display_name": "Dracula",
+            "category": "Fictional",
+            "summary": "Vampire count from Bram Stoker's 1897 novel.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            },
+            "about": "Fictional vampire count from Bram Stoker�s novel; a gothic icon."
+          },
+          {
+            "figure_id": "alice",
+            "display_name": "Alice",
+            "category": "Fictional",
+            "summary": "Alice in Wonderland (Lewis Carroll); curious adventurer.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            },
+            "about": "Adventurous girl who discovers Wonderland; a symbol of curiosity."
+          },
+          {
+            "figure_id": "huckleberry_finn",
+            "display_name": "Huckleberry Finn",
+            "category": "Fictional",
+            "summary": "Mark Twain's young adventurer on the Mississippi.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            },
+            "about": "Free-spirited boy who journeys the Mississippi; explores freedom and morality."
+          },
+          {
+            "figure_id": "ebenezer_scrooge",
+            "display_name": "Ebenezer Scrooge",
+            "category": "Fictional",
+            "summary": "Charles Dickens' A Christmas Carol miser.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            },
+            "about": "Miser who transforms after ghostly visits in Dickens�s A Christmas Carol."
+          },
+          {
+            "figure_id": "hamlet",
+            "display_name": "Hamlet",
+            "category": "Fictional",
+            "summary": "Prince of Denmark from Shakespeare's tragedy.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            },
+            "about": "Prince of Denmark; contemplates action, grief, and fate in Shakespeare�s tragedy."
+          }
+        ],
+        "description": "Public-domain characters, legends, and myths — fun to explore."
+      },
+      {
+        "row_id": "ancient_world",
+        "category": "Ancient World",
+        "figure_cards": [
+          {
+            "figure_id": "cleopatra",
+            "display_name": "Cleopatra",
+            "category": "Ancient",
+            "summary": "Queen of Egypt (69�30 BCE).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            },
+            "about": "Last active ruler of the Ptolemaic Kingdom of Egypt; famed for her wit, languages, and diplomacy."
+          },
+          {
+            "figure_id": "caesar",
+            "display_name": "Julius Caesar",
+            "category": "Ancient",
+            "summary": "Roman general and statesman (100�44 BCE).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            },
+            "about": "Roman general, statesman, and author whose leadership transformed the Roman Republic."
+          },
+          {
+            "figure_id": "augustus",
+            "display_name": "Augustus",
+            "category": "Ancient",
+            "summary": "First Roman emperor (63 BCE�14 CE).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            },
+            "about": "Founder of the Roman Empire and its first Emperor; ushered in the Pax Romana."
+          },
+          {
+            "figure_id": "alexander",
+            "display_name": "Alexander the Great",
+            "category": "Ancient",
+            "summary": "King of Macedon; vast empire (356�323 BCE).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            },
+            "about": "King of Macedon who created one of the largest empires of the ancient world."
+          },
+          {
+            "figure_id": "confucius",
+            "display_name": "Confucius",
+            "category": "Ancient",
+            "summary": "Chinese philosopher (551�479 BCE).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            },
+            "about": "Chinese philosopher focused on ethics, family, and social harmony."
+          },
+          {
+            "figure_id": "socrates",
+            "display_name": "Socrates",
+            "category": "Philosophy",
+            "summary": "Classical Greek philosopher (c. 470�399 BCE).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "plato",
+            "display_name": "Plato",
+            "category": "Philosophy",
+            "summary": "Classical Greek philosopher (c. 428�348 BCE).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/plato_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "aristotle",
+            "display_name": "Aristotle",
+            "category": "Philosophy",
+            "summary": "Classical Greek philosopher (384�322 BCE).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/aristotle_poster.jpg"
+            }
+          }
+        ],
+        "description": "Leaders and thinkers who shaped the ancient world."
+      },
+      {
+        "row_id": "renaissance_invention",
+        "category": "Renaissance & Invention",
+        "figure_cards": [
+          {
+            "figure_id": "leonardo",
+            "display_name": "Leonardo da Vinci",
+            "category": "Renaissance",
+            "summary": "Polymath artist & inventor (1452�1519).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/curie_poster.jpg"
+            },
+            "about": "Renaissance polymath; painter of the Mona Lisa; prolific inventor and observer of nature."
+          },
+          {
+            "figure_id": "michelangelo",
+            "display_name": "Michelangelo",
+            "category": "Renaissance",
+            "summary": "Sculptor & painter (1475�1564).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/curie_poster.jpg"
+            },
+            "about": "Renaissance master sculptor and painter; creator of David and the Sistine Chapel ceiling."
+          },
+          {
+            "figure_id": "gutenberg",
+            "display_name": "Johannes Gutenberg",
+            "category": "Invention",
+            "summary": "Movable-type printing press (c. 1400�1468).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/curie_poster.jpg"
+            },
+            "about": "German inventor who pioneered movable-type printing in Europe."
+          },
+          {
+            "figure_id": "copernicus",
+            "display_name": "Nicolaus Copernicus",
+            "category": "Science",
+            "summary": "Heliocentric model (1473�1543).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/curie_poster.jpg"
+            },
+            "about": "Proposed a heliocentric model, placing the sun at the center of the solar system."
+          },
+          {
+            "figure_id": "galileo",
+            "display_name": "Galileo Galilei",
+            "category": "Science",
+            "summary": "Astronomy & motion (1564�1642).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/curie_poster.jpg"
+            },
+            "about": "Italian astronomer and physicist; champion of observation and experiment."
+          },
+          {
+            "figure_id": "machiavelli",
+            "display_name": "Niccol� Machiavelli",
+            "category": "Renaissance",
+            "summary": "Political thinker (1469�1527).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/curie_poster.jpg"
+            },
+            "about": "Florentine political thinker; his writings explore power and statecraft."
+          }
+        ],
+        "description": "Art, science, and invention reshaping the world."
+      },
+      {
+        "row_id": "science_greats",
+        "category": "Science Greats",
+        "figure_cards": [
+          {
+            "figure_id": "newton",
+            "display_name": "Isaac Newton",
+            "category": "Scientists",
+            "summary": "Laws of motion; calculus (1643�1727).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/newton_poster.jpg"
+            },
+            "about": "Formulated the laws of motion and universal gravitation; co-invented calculus."
+          },
+          {
+            "figure_id": "curie",
+            "display_name": "Marie Curie",
+            "category": "Scientists",
+            "summary": "Radioactivity pioneer; two Nobels (1867�1934).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/curie_poster.jpg"
+            },
+            "about": "Pioneering physicist and chemist; discovered polonium and radium; first woman to win a Nobel Prize."
+          },
+          {
+            "figure_id": "einstein",
+            "display_name": "Albert Einstein",
+            "category": "Scientists",
+            "summary": "Relativity (1879�1955).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/einstein_poster.jpg"
+            },
+            "about": "Developed the theory of relativity and reshaped modern physics."
+          },
+          {
+            "figure_id": "tesla",
+            "display_name": "Nikola Tesla",
+            "category": "Inventors",
+            "summary": "AC power (1856�1943).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/tesla_poster.jpg"
+            },
+            "about": "Inventor and electrical engineer; advanced AC power systems and wireless concepts."
+          },
+          {
+            "figure_id": "faraday",
+            "display_name": "Michael Faraday",
+            "category": "Scientists",
+            "summary": "Electromagnetism (1791�1867).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/einstein_poster.jpg"
+            },
+            "about": "Experimentalist who revealed key principles of electromagnetism and electrochemistry."
+          },
+          {
+            "figure_id": "darwin",
+            "display_name": "Charles Darwin",
+            "category": "Scientists",
+            "summary": "Evolution by natural selection (1809�1882).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/einstein_poster.jpg"
+            },
+            "about": "Naturalist who articulated evolution by natural selection in On the Origin of Species."
+          },
+          {
+            "figure_id": "lovelace",
+            "display_name": "Ada Lovelace",
+            "category": "Scientists",
+            "summary": "Early computing pioneer (1815�1852).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/einstein_poster.jpg"
+            },
+            "about": "Mathematician who envisioned general-purpose computation with Babbage�s Analytical Engine."
+          },
+          {
+            "figure_id": "turing",
+            "display_name": "Alan Turing",
+            "category": "Scientists",
+            "summary": "Computing & codebreaking (1912�1954).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/einstein_poster.jpg"
+            },
+            "about": "Mathematician and codebreaker; foundational work in computing and AI."
+          }
+        ],
+        "description": "Breakthrough minds who transformed how we understand the world."
+      },
+      {
+        "row_id": "wars_strategy",
+        "category": "Wars & Strategy",
+        "figure_cards": [
+          {
+            "figure_id": "caesar",
+            "display_name": "Julius Caesar",
+            "category": "Strategy",
+            "summary": "Roman general & statesman.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            },
+            "about": "Roman general, statesman, and author whose leadership transformed the Roman Republic."
+          },
+          {
+            "figure_id": "napoleon",
+            "display_name": "Napoleon Bonaparte",
+            "category": "Strategy",
+            "summary": "French emperor & commander (1769�1821).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            },
+            "about": "Military leader and emperor whose campaigns reshaped Europe."
+          },
+          {
+            "figure_id": "sun_tzu",
+            "display_name": "Sun Tzu",
+            "category": "Strategy",
+            "summary": "Author of The Art of War.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            },
+            "about": "Attributed author of The Art of War; strategic wisdom spanning centuries."
+          },
+          {
+            "figure_id": "hannibal",
+            "display_name": "Hannibal Barca",
+            "category": "Strategy",
+            "summary": "Carthaginian general (c. 247�183 BCE).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            },
+            "about": "Brilliant Carthaginian commander famed for crossing the Alps with war elephants."
+          },
+          {
+            "figure_id": "genghis_khan",
+            "display_name": "Genghis Khan",
+            "category": "Strategy",
+            "summary": "Founder of the Mongol Empire.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            },
+            "about": "Founder of the Mongol Empire; united steppe tribes into a formidable force."
+          },
+          {
+            "figure_id": "wellington",
+            "display_name": "Duke of Wellington",
+            "category": "Strategy",
+            "summary": "Defeated Napoleon at Waterloo.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            },
+            "about": "British general who defeated Napoleon at Waterloo; later served as Prime Minister."
+          },
+          {
+            "figure_id": "clausewitz",
+            "display_name": "Carl von Clausewitz",
+            "category": "Strategy",
+            "summary": "On War; military theory.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            },
+            "about": "Prussian general and military theorist; emphasized the fog of war and political nature of conflict."
+          },
+          {
+            "figure_id": "joan_of_arc",
+            "display_name": "Joan of Arc",
+            "category": "Strategy",
+            "summary": "French heroine & saint (1412�1431).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/curie_poster.jpg"
+            },
+            "about": "Teenage peasant who led French forces to key victories; canonized as a saint."
+          }
+        ],
+        "description": "Commanders and strategists from history�s decisive conflicts."
+      },
+      {
+        "row_id": "leadership",
+        "category": "Leadership",
+        "figure_cards": [
+          {
+            "figure_id": "lincoln",
+            "display_name": "Abraham Lincoln",
+            "category": "Leadership",
+            "summary": "16th U.S. president (1809�1865).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/lincoln_poster.jpg"
+            },
+            "about": "US president who preserved the Union and abolished slavery."
+          },
+          {
+            "figure_id": "churchill",
+            "display_name": "Winston Churchill",
+            "category": "Leadership",
+            "summary": "UK PM during WWII (1874�1965).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/fdr_poster.jpg"
+            },
+            "about": "British statesman whose speeches rallied resolve during WWII."
+          },
+          {
+            "figure_id": "washington",
+            "display_name": "George Washington",
+            "category": "Leadership",
+            "summary": "1st U.S. president (1732�1799).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/washington_poster.jpg"
+            },
+            "about": "Commander-in-chief of the Continental Army; first President of the United States."
+          },
+          {
+            "figure_id": "gandhi",
+            "display_name": "Mahatma Gandhi",
+            "category": "Leadership",
+            "summary": "Indian independence leader (1869�1948).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/fdr_poster.jpg"
+            },
+            "about": "Leader of India�s nonviolent independence movement; advocate of civil disobedience."
+          },
+          {
+            "figure_id": "mandela",
+            "display_name": "Nelson Mandela",
+            "category": "Leadership",
+            "summary": "Anti-apartheid leader; SA president (1918�2013).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/fdr_poster.jpg"
+            },
+            "about": "Anti-apartheid revolutionary and South Africa�s first Black president."
+          },
+          {
+            "figure_id": "douglass",
+            "display_name": "Frederick Douglass",
+            "category": "Leadership",
+            "summary": "Abolitionist & orator (1818�1895).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/fdr_poster.jpg"
+            },
+            "about": "Formerly enslaved orator and writer; leading abolitionist voice."
+          }
+        ],
+        "description": "Voices that led nations and movements."
+      },
+      {
+        "row_id": "women_history",
+        "category": "Women in History",
+        "figure_cards": [
+          {
+            "figure_id": "cleopatra",
+            "display_name": "Cleopatra",
+            "category": "History",
+            "summary": "Queen of Egypt (69�30 BCE).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            },
+            "about": "Last active ruler of the Ptolemaic Kingdom of Egypt; famed for her wit, languages, and diplomacy."
+          },
+          {
+            "figure_id": "curie",
+            "display_name": "Marie Curie",
+            "category": "History",
+            "summary": "Pioneering scientist; two Nobels.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/curie_poster.jpg"
+            },
+            "about": "Pioneering physicist and chemist; discovered polonium and radium; first woman to win a Nobel Prize."
+          },
+          {
+            "figure_id": "joan_of_arc",
+            "display_name": "Joan of Arc",
+            "category": "History",
+            "summary": "French heroine & saint.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/curie_poster.jpg"
+            },
+            "about": "Teenage peasant who led French forces to key victories; canonized as a saint."
+          },
+          {
+            "figure_id": "lovelace",
+            "display_name": "Ada Lovelace",
+            "category": "History",
+            "summary": "Early computing pioneer.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/einstein_poster.jpg"
+            },
+            "about": "Mathematician who envisioned general-purpose computation with Babbage�s Analytical Engine."
+          },
+          {
+            "figure_id": "tubman",
+            "display_name": "Harriet Tubman",
+            "category": "History",
+            "summary": "Abolitionist; Underground Railroad.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/fdr_poster.jpg"
+            },
+            "about": "Conductor on the Underground Railroad; fought for freedom and suffrage."
+          },
+          {
+            "figure_id": "hypatia",
+            "display_name": "Hypatia",
+            "category": "History",
+            "summary": "Philosopher & mathematician (c. 350�415).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/plato_poster.jpg"
+            },
+            "about": "Neoplatonist philosopher, astronomer, and mathematician in Alexandria."
+          },
+          {
+            "figure_id": "nightingale",
+            "display_name": "Florence Nightingale",
+            "category": "History",
+            "summary": "Founder of modern nursing.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/curie_poster.jpg"
+            },
+            "about": "Statistician and social reformer who transformed nursing practice."
+          },
+          {
+            "figure_id": "sojourner_truth",
+            "display_name": "Sojourner Truth",
+            "category": "History",
+            "summary": "Abolitionist & women's rights advocate.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/fdr_poster.jpg"
+            },
+            "about": "Abolitionist and women�s rights advocate; famed 'Ain�t I a Woman?' speech."
+          }
+        ],
+        "description": "Extraordinary women who changed history."
+      },
+      {
+        "row_id": "kids",
+        "category": "For Kids",
+        "figure_cards": [
+          {
+            "figure_id": "aesop",
+            "display_name": "Aesop",
+            "category": "Kids",
+            "summary": "Fables with morals (6th century BCE).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "mother_goose",
+            "display_name": "Mother Goose",
+            "category": "Kids",
+            "summary": "Nursery rhymes collection (PD).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "little_red",
+            "display_name": "Little Red Riding Hood",
+            "category": "Kids",
+            "summary": "Classic fairy tale (PD).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "cinderella",
+            "display_name": "Cinderella",
+            "category": "Kids",
+            "summary": "Classic fairy tale (PD).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "snow_white",
+            "display_name": "Snow White",
+            "category": "Kids",
+            "summary": "Grimm tale (PD).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "jack_beanstalk",
+            "display_name": "Jack (Beanstalk)",
+            "category": "Kids",
+            "summary": "English fairy tale (PD).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "goldilocks",
+            "display_name": "Goldilocks",
+            "category": "Kids",
+            "summary": "Three bears story (PD).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "three_little_pigs",
+            "display_name": "Three Little Pigs",
+            "category": "Kids",
+            "summary": "Classic tale (PD).",
+            "preview": {
+              "url": "http://localhost:8080/media/share/socrates_poster.jpg"
+            }
+          }
+        ],
+        "description": "Story time and familiar fairy tales for kids."
+      },
+      {
+        "row_id": "companion_edu",
+        "category": "Companion & Educational",
+        "figure_cards": [
+          {
+            "figure_id": "algebra_tutor",
+            "display_name": "Algebra Tutor",
+            "category": "Companion",
+            "summary": "Step-by-step math help.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/curie_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "grade2_math_teacher",
+            "display_name": "2nd-Grade Math Teacher",
+            "category": "Companion",
+            "summary": "Gentle math practice for kids.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/curie_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "bio_lab_partner",
+            "display_name": "Biology Lab Partner",
+            "category": "Companion",
+            "summary": "Study buddy for biology.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/curie_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "chemistry_ta",
+            "display_name": "Chemistry TA",
+            "category": "Companion",
+            "summary": "Explains reactions & safety.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/curie_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "physics_explainer",
+            "display_name": "Physics Explainer",
+            "category": "Companion",
+            "summary": "Intuition for forces & motion.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/curie_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "writing_coach",
+            "display_name": "Writing Coach",
+            "category": "Companion",
+            "summary": "Outlines, edits, and style tips.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/curie_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "spanish_partner",
+            "display_name": "Spanish Language Partner",
+            "category": "Companion",
+            "summary": "Conversational Spanish practice.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/curie_poster.jpg"
+            }
+          },
+          {
+            "figure_id": "mindfulness_companion",
+            "display_name": "Mindfulness Companion",
+            "category": "Companion",
+            "summary": "Breathing, reflections, and calm.",
+            "preview": {
+              "url": "http://localhost:8080/media/share/curie_poster.jpg"
+            }
+          }
+        ],
+        "description": "Helpful companions for learning and wellness."
+      }
+    ]
+  },
+  "personas": {
+    "fdr": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "adams": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "madison": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "monroe": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "reagan": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "obama": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "polk": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "victoria": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "socrates": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "jefferson": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "lincoln": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "kennedy": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "aristotle": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "charles_iii": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "henry_viii": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "elizabeth_ii": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "elizabeth_i": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "washington": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "tesla": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "t_roosevelt": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "newton": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "curie": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "einstein": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "plato": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "sherlock_holmes": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "robin_hood": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "king_arthur": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "athena": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "odysseus": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "dracula": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "alice": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "huckleberry_finn": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "ebenezer_scrooge": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "hamlet": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "cleopatra": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "caesar": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "augustus": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "alexander": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "confucius": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "leonardo": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "michelangelo": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "gutenberg": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "copernicus": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "galileo": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "machiavelli": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "faraday": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "darwin": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "lovelace": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "turing": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "napoleon": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "sun_tzu": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "hannibal": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "genghis_khan": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "wellington": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "clausewitz": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "joan_of_arc": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "churchill": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "gandhi": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "mandela": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "douglass": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "tubman": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "hypatia": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "nightingale": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "sojourner_truth": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "aesop": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "mother_goose": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "little_red": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "cinderella": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "snow_white": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "jack_beanstalk": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "goldilocks": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "three_little_pigs": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "algebra_tutor": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "grade2_math_teacher": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "bio_lab_partner": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "chemistry_ta": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "physics_explainer": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "writing_coach": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "spanish_partner": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    },
+    "mindfulness_companion": {
+      "default_fixture_id": "fx_socrates_opening_01"
+    }
+  }
+}

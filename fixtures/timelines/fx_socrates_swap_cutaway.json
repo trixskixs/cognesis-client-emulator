@@ -1,0 +1,50 @@
+{
+  "version": "1",
+  "clock": "audio",
+  "start_at": "now",
+  "tracks": [
+    {
+      "type": "audio",
+      "id": "a3",
+      "source": {
+        "kind": "pair_wav_montage",
+        "url": "/media/tts/tts_socrates_idle.wav"
+      },
+      "offset": 0,
+      "duration": 6.0
+    },
+    {
+      "type": "video",
+      "id": "v3",
+      "source": {
+        "kind": "hero",
+        "url": "/media/clips/clip_socrates_idle.mp4"
+      },
+      "offset": 0,
+      "duration": 6.0
+    }
+  ],
+  "swap_points": [
+    {
+      "at": 3.0,
+      "replace": "v3",
+      "with": {
+        "kind": "scenic",
+        "cdn_url": "/media/scenes/agora_walk.mp4",
+        "role": "broll",
+        "mode": "cutaway"
+      }
+    }
+  ],
+  "sidecar": {
+    "sentences": [
+      {
+        "idx": 0,
+        "band": "S1",
+        "t0_ms": 0,
+        "t1_ms": 6000,
+        "text": "I will wait here until you are ready to speak again."
+      }
+    ]
+  }
+}
