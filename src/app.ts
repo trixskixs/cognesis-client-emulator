@@ -102,6 +102,12 @@ function applyFixtureToggles(
   timeline.meta.fixture_id = fixture.id;
   timeline.meta.stage_idle_after_ms = idleMs;
 
+  // Ensure sources_badge is set if citations are present
+  if (typeof timeline.sources_badge === "undefined") {
+    const hasCitations = Boolean((timeline as any).citations_ref?.citations_etag || (timeline as any).citations_ref?.citations_inline);
+    timeline.sources_badge = fixture.sources_badge === true || hasCitations;
+  }
+
   if (!config.swapEnabled || fixture.swap_enabled === false) {
     timeline.swap_points = [];
   }
@@ -316,6 +322,23 @@ export function createApp(dependencies: AppDependencies): express.Express {
     sseHub.broadcastTurns(sessionId, pending);
   });
 
+  // Serve citations manifests by ETag (filename under fixtures/citations/<etag>.json)
+  app.get("/v1/citations/:etag", async (req, res) => {
+    const etag = req.params.etag;
+    if (!etag || typeof etag !== "string") {
+      sendError(res, 400, "EMU_BAD_REQUEST", "Invalid citations ETag");
+      return;
+    }
+    try {
+      const filePath = path.join(config.fixturesPath, "citations", `${etag}.json`);
+      const raw = await fs.readFile(filePath, "utf-8");
+      const data = JSON.parse(raw) as { citations: Array<Record<string, unknown>> };
+      res.type("application/json").json(data);
+    } catch (error) {
+      sendError(res, 404, "EMU_CITATIONS_NOT_FOUND", (error as Error).message);
+    }
+  });
+
   app.post("/v1/media/sign", async (req, res) => {
     const pathRequest = req.body?.path;
     if (typeof pathRequest !== "string") {
@@ -368,6 +391,39 @@ export function createApp(dependencies: AppDependencies): express.Express {
       // If a figure manifest is missing, serve an empty JSON array to keep dev UX clean
       if (/^figures\/[^/]+\/manifests\/(stills|scenes|clips)\.json$/.test(relative)) {
         res.type("application/json").send("[]");
+        return;
+      }
+      sendError(res, 404, "EMU_MEDIA_NOT_FOUND", (error as Error).message);
+    }
+  });
+
+  // Support HEAD requests for media probing from the web client
+  app.head("/media/*", async (req, res) => {
+    const params = req.params as Record<string, string | undefined>;
+    const relative = params["0"];
+    if (typeof relative !== "string") {
+      sendError(res, 400, "EMU_BAD_REQUEST", "Invalid media path");
+      return;
+    }
+    try {
+      const absolute = await resolveMediaFile(relative);
+      const type = mime.lookup(absolute) || "application/octet-stream";
+      res.type(type);
+      // sendFile on HEAD will just send headers; no body
+      res.sendFile(absolute, (err) => {
+        if (err) {
+          const status = (err as { statusCode?: number }).statusCode ?? 500;
+          if (!res.headersSent) {
+            sendError(res, status, "EMU_MEDIA_STREAM_ERROR", err.message);
+          } else {
+            res.end();
+          }
+        }
+      });
+    } catch (error) {
+      // For figure manifests, reply with empty JSON (even on HEAD)
+      if (/^figures\/[^/]+\/manifests\/(stills|scenes|clips)\.json$/.test(relative)) {
+        res.type("application/json").end();
         return;
       }
       sendError(res, 404, "EMU_MEDIA_NOT_FOUND", (error as Error).message);

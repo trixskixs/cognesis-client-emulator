@@ -71,6 +71,14 @@ export interface TimelineSidecar {
   pair_policy?: Record<string, unknown>;
 }
 
+export interface TimelineCitationsRef {
+  citations_etag?: string;
+  citations_inline?: {
+    schema: string;
+    citations: Array<Record<string, unknown>>;
+  };
+}
+
 export interface TimelineShareRef {
   id: string;
   ttl_s: number;
@@ -86,6 +94,7 @@ export interface TimelineV1 {
   tracks: TimelineTrack[];
   swap_points?: TimelineSwapPoint[];
   sidecar?: TimelineSidecar;
+  citations_ref?: TimelineCitationsRef | null;
   share_ref?: TimelineShareRef | null;
   meta?: Record<string, unknown>;
 }

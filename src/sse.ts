@@ -132,6 +132,8 @@ export class SseHub {
     }
 
     writeEvent(client, "turn_started", { request_id: entry.requestId });
+    // Clear any previously shown idle
+    writeEvent(client, "stage.stop_idle", { reason: "new_turn" });
 
     const audioTimer = setTimeout(() => {
       latencyHistogram.observe({ phase: "audio" }, entry.latencyMs.audio);

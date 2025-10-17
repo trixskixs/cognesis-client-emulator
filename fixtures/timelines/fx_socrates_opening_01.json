@@ -64,6 +64,10 @@
       "selected_pair_id": "grp_greeting_v1"
     }
   },
+  "sources_badge": true,
+  "citations_ref": {
+    "citations_etag": "demo_socrates_intro"
+  },
   "share_ref": {
     "id": "share_socrates_intro",
     "ttl_s": 600,
